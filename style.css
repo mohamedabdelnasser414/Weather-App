@@ -1,0 +1,83 @@
+body, * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p {
+    padding-bottom: 0.5rem;
+}
+.weather-app{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://source.unsplash.com/1600x1000/?nature,water");
+    background-size: cover;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container{
+    width: 100%;
+    max-width: 27rem;
+    background-color: #000000d0;
+    color: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin: 1rem;
+}
+
+.search-bar{
+    padding-bottom: 2rem;
+}
+
+.search-input{
+    width: 80%;
+    padding: 0.5rem 1rem ;
+    border-radius: 1.2rem;
+    outline: none;
+    border: none;
+    background-color: rgb(52, 47, 47,0.7);
+    font-size: 1.2rem;
+    opacity: 0.9;
+    color: #fff;
+    cursor: pointer;
+}
+
+.search-input::placeholder { 
+    color: rgb(174, 149, 149);
+    opacity: 1; 
+  }
+
+.search-icon{
+    border: none;
+    font-size: 1.2rem;
+    width: 2.3rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    background-color: rgb(52, 47, 47);
+    opacity: 0.9;
+    color: #fff;
+    cursor: pointer;
+}
+
+.heading{
+    font-size: 2.2rem;
+}
+
+.temperature{
+    font-size: 2.2rem;
+    padding: 2rem 0;
+}
+
+.description-wapper{
+    font-size: 1.3rem;
+    display: flex;
+}
+
+.description-wapper img{
+    margin-right: 1rem;
+    width: 10px;
+    height: 10px;
+}
