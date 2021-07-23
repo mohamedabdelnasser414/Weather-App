@@ -1,3 +1,41 @@
+// Get weather data based on user location
+
+window.addEventListener("load",()=>{
+    navigator.geolocation.getCurrentPosition(userLocation.getCurrentPosition , userLocation.defaultCity);
+});
+
+const userLocation = {
+    getCurrentPosition:function (position){
+        let lat = position.coords.latitude;
+        let lon = position.coords.longitude;
+         // Fetching weather data with latitude and longitude credentials 
+                const api = `http://api.openweathermap.org/data/2.5/weather?appid=${weather.apiKey}&units=metric&lat=${lat}&lon=${lon}`;
+                fetch(api)
+                    .then(response =>{
+                        return response.json();
+                    })
+                    .then(data=>{
+                        weather.displayWeather(data)
+                     })
+    },
+    defaultCity:function (){
+            weather.getWeather("Dublin");
+    }
+}
+
+
+
+// // Get weather data  based on user search
+
+document.querySelector(".search-icon").addEventListener("click",()=>{
+    weather.search()
+});
+document.querySelector(".search-input").addEventListener("keypress",(event)=>{
+    if (event.key === "Enter"){
+        weather.search()
+    } 
+});
+
 const weather = {
     apiKey: "308fecec26f39a31de44bdf9f1d6d99d",
     getWeather:function(city) {
@@ -25,14 +63,5 @@ const weather = {
         weather.getWeather(document.querySelector(".search-input").value);
     }
  }  
-    document.querySelector(".search-icon").addEventListener("click",()=>{
-        weather.search()
-    });
-    document.querySelector(".search-input").addEventListener("keypress",(event)=>{
-        if (event.key === "Enter"){
-            weather.search()
-        } 
-    });
 
-    weather.getWeather("Cork");
 
